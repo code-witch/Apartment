@@ -7,10 +7,16 @@ const HOST_NAME = process.env.HOST_NAME || 'localhost';
 
 let app = express();
 
+// website routes
+const indexRouter = require('./routes/index');
+const userRouter = require('./routes/user');
 
-let indexRouter = require('./routes/index');
-let userRouter = require('./routes/user');
-let mangaRouter = require('./routes/manga');
+
+// API stuff
+const apiMangaRouter = require('./routes/api/manga');
+const apiFlashCardRouter = require('./routes/api/flashcard');
+const apiRouter = require('./routes/api/index');
+
 // let reviewRouter = require('./routes/reveiw');
 // let todoRouter = require('./routes/todo');
 // let groceryRouter = require('./routes/grocery');
@@ -24,7 +30,12 @@ app.use(express.static(__dirname + '/public'));
 
 app.use('/', indexRouter);
 app.use('/user', userRouter);
-app.use('/manga', mangaRouter);
+
+
+app.use('/api/manga', apiMangaRouter);
+app.use('/api/flashcard', apiFlashCardRouter);
+app.use('/api', apiRouter);
+
 // app.use('/review', reviewRouter);
 // app.use('/todo', todoRouter);
 // app.use('/grocery', groceryRouter);
