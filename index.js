@@ -13,9 +13,9 @@ const userRouter = require('./routes/user');
 
 
 // API stuff
-const apiMangaRouter = require('./routes/api/manga');
-const apiFlashCardRouter = require('./routes/api/flashcard');
-const apiRouter = require('./routes/api/index');
+const apiMangaRouter = require('./api/routes/manga');
+const apiFlashCardRouter = require('./api/routes/flashcard');
+const apiRouter = require('./api/routes/index');
 
 // let reviewRouter = require('./routes/reveiw');
 // let todoRouter = require('./routes/todo');

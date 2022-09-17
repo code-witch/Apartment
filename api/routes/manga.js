@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const mangaController = require('../../controllers/api/mangaController');
+const mangaController = require('../controllers/mangaController');
 
 
 router.use((req, res, next) => {
@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
     res.send('manga');
 });
 
-router.get('/:username', (req, res) => {
+router.get('/:apikey', (req, res) => {
     let library = mangaController.getAllLibraiesByUsername(req.params.username);
     res.json(library);
 });
